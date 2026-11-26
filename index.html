@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="NO.46 dijital karargâh. Kafası kırık ama bir konuda iyi bir ekibin sitesi.">
+  <meta name="language" content="Turkish">
+  <title>NO.46 — Dijital Karargâh</title>
+  <link rel="canonical" href="http://127.0.0.1:4173/">
+  <meta property="og:title" content="NO.46 — Dijital Karargâh">
+  <meta property="og:description" content="Deli Raporu ve Meslek Edindirme Şube Müdürlüğü. Kafası kırık ama bir konuda iyi bir ekibin gizli kulübü.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="NO.46 — Dijital Karargâh">
+  <meta property="og:image" content="http://127.0.0.1:4173/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NO.46 — Dijital Karargâh">
+  <meta name="twitter:description" content="Deli Raporu ve Meslek Edindirme Şube Müdürlüğü. Kafası kırık ama bir konuda iyi bir ekibin gizli kulübü.">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/no46-favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/home.css?v=3">
+  <link rel="stylesheet" href="/assets/css/site.css?v=21">
+  <link rel="stylesheet" href="/assets/css/no46.css?v=19">
+  <link rel="stylesheet" href="/assets/css/auth.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NO.46 — Dijital Karargâh",
+    "url": "http://127.0.0.1:4173/",
+    "logo": "http://127.0.0.1:4173/assets/img/no46-logo.svg",
+    "description": "Deli Raporu ve Meslek Edindirme Şube Müdürlüğü. Kafası kırık ama bir konuda iyi bir ekibin gizli kulübü."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NO.46 — Dijital Karargâh",
+    "url": "http://127.0.0.1:4173/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://127.0.0.1:4173/kulturel?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" data-route="/" aria-label="NO.46 ana sayfa">
+        <img class="brand-logo" src="/assets/img/no46-logo.svg?v=3" alt="No46">
+      </a>
+      <div class="top-strip">
+        <nav class="nav" aria-label="Ana menü">
+          <a href="/" data-route="/">Anasayfa</a>
+          <a href="/no46" data-route="/no46">No46</a>
+          <div class="nav-item" id="ekip-item">
+            <a href="/ekip/kim-bu-ekip" data-route="/ekip/kim-bu-ekip">Ekip</a>
+            <button type="button" class="nav-chevron" id="ekip-menu-button" aria-expanded="false" aria-label="Ekip alt menüsü"></button>
+            <div class="nav-menu" id="ekip-menu">
+              <a href="/ekip/kim-bu-ekip" data-route="/ekip/kim-bu-ekip">Kim bu ekip?</a>
+              <a href="/kurbağa.html">Kurbağa felsefesi</a>
+            </div>
+          </div>
+          <div class="nav-item" id="culture-item">
+            <a href="/kulturel" data-route="/kulturel">Kültürel</a>
+            <button type="button" class="nav-chevron" id="culture-menu-button" aria-expanded="false" aria-label="Kültürel alt menüsü"></button>
+            <div class="nav-menu" id="culture-menu">
+              <a href="/kulturel/psikoloji" data-route="/kulturel/psikoloji">Psikoloji</a>
+              <a href="/kulturel/hayvan-bilim" data-route="/kulturel/hayvan-bilim">Hayvan bilim</a>
+              <a href="/kulturel/kriminoloji" data-route="/kulturel/kriminoloji">Kriminoloji</a>
+              <a href="/kulturel/bilisim" data-route="/kulturel/bilisim">Bilişim</a>
+              <a href="/kulturel/film" data-route="/kulturel/film">Film</a>
+              <a href="/kulturel/dizi" data-route="/kulturel/dizi">Dizi</a>
+              <a href="/kulturel/fizik-tedavi" data-route="/kulturel/fizik-tedavi">Fizik tedavi</a>
+              <a href="/kulturel/osb" data-route="/kulturel/osb">OSB</a>
+              <a href="/kulturel/gereksiz-bilgiler" data-route="/kulturel/gereksiz-bilgiler">Gereksiz bilgiler</a>
+            </div>
+          </div>
+          <a href="/gelistirmeler" data-route="/gelistirmeler">Geliştirmeler</a>
+        </nav>
+        <button class="user-chip profile-card" id="user-chip" type="button" hidden>
+          <span class="user-avatar" id="user-avatar" aria-hidden="true"></span>
+          <span class="user-chip-name" id="user-name"></span>
+          <span class="user-rank" id="user-rank"></span>
+          <span class="user-task" id="user-task"></span>
+          <span class="user-badges" id="user-badges" aria-label="Kullanıcı rozetleri"></span>
+          <span class="user-chip-points" title="Sitede aktif kaldıkça puan kazanırsın"><span aria-hidden="true">✦</span> <span id="user-points">0</span> puan</span>
+        </button>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Menüyü aç">☰</button>
+    </div>
+    <nav class="wrap mobile-nav" id="mobile-nav" hidden aria-label="Mobil menü">
+      <a href="/" data-route="/">Anasayfa</a>
+      <a href="/no46" data-route="/no46">No46</a>
+      <a href="/ekip/kim-bu-ekip" data-route="/ekip/kim-bu-ekip">Kim bu ekip?</a>
+      <a href="/kurbağa.html">Kurbağa felsefesi</a>
+      <a href="/kulturel/psikoloji" data-route="/kulturel/psikoloji">Kültürel</a>
+      <a href="/gelistirmeler" data-route="/gelistirmeler">Geliştirmeler</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section id="view-home">
+        <div class="hero reveal">
+          <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+          <div>
+            <p class="kicker"></p>
+            <h1>Kafamızda bir çatlak var.<br><em>Oradan bazen fikir sızıyor.</em></h1>
+            <p>No46, birbirini TikTok’un sonsuz kaydırma evreninde bulmuş bir grup insanın zamanla kendi gerçekliğini oluşturmasıyla ortaya çıktı. Burası o gerçekliğin dijital karargâhı.</p>
+            <div class="quick-actions">
+              <a class="btn btn-primary" href="/kulturel/psikoloji" data-route="/kulturel/psikoloji">Kültüre gir</a>
+              <a class="btn btn-primary" href="/no46" data-route="/no46">No46</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="manifesto-section reveal" aria-labelledby="manifesto-title">
+          <div class="wrap manifesto-wrap">
+            <p class="kicker"></p>
+            <h2 id="manifesto-title">Her şey tesadüf olabilir.<br><em>Bizim bir araya gelmemiz biraz şüpheli.</em></h2>
+            <div class="manifesto-copy">
+              <p>No.46, birbirini TikTok'un sonsuz kaydırma evreninde tesadüfen bulmuş bir grup insanın, zamanla kendi gerçekliğini oluşturmasıyla ortaya çıktı.</p>
+              <p>Aramızda yönetmenler, senaristler, müzisyenler, pırlanta ustaları, kurbağalara gereğinden fazla ilgi duyan insanlar ve kategorilere sığmayı reddeden başka karakterler var.</p>
+              <p>Ne yaptığımızı tek cümleyle anlatmak zor. Zaten denedik, olmadı.</p>
+              <p>Bazen sanat konuşuruz, bazen hayatı kurtarırız, bazen de kimsenin neden oraya geldiğini hatırlamadığı bir sohbetin içinde sabahlarız.</p>
+              <p>Dışarıdan bakıldığında biraz karışık görünebiliriz. İçeriden bakıldığında da pek farklı değil.</p>
+              <p>Bir manifestomuz yok. Bir iş planımız da yok. Ama fikirlerimiz, hikâyelerimiz, projelerimiz ve muhtemelen açıklanması gerekmeyen birkaç ortak problemimiz var.</p>
+            </div>
+            <blockquote>No46 bir topluluk değil, denk gelinmiş ihtimaldir.</blockquote>
+          </div>
+        </section>
+
+        <div class="section reveal">
+          <div class="section-head section-head--stack">
+            <div><p class="kicker"></p><h2>Nereye gidelim?</h2></div>
+            <p class="section-sub">Kafan karışık olabilir. Menü de öyle. Bir alan seç; gerisi kendini sonra gösterir. Burada her şey biraz yanlış yerde duruyor olabilir, ama en azından kapılar açık.</p>
+          </div>
+          <div class="card-grid">
+            <a class="card" href="/no46" data-route="/no46"><span class="card-icon" aria-hidden="true">✦</span><h3>Açıklayan No46</h3><p>Ekibin kendini anlattığı yer. Kim neyle uğraşıyor, kafası neye kırık, neyi boş yapıyor — hepsi burada. Bir kategori seç, yazını bırak, başkalarınınkine yorum yap.</p></a>
+            <a class="card" href="/ekip/kim-bu-ekip" data-route="/ekip/kim-bu-ekip"><span class="card-icon" aria-hidden="true">◈</span><h3>Ekip</h3><p>Kim bu ekip? Her üyenin kendine bakışı, uzmanlık alanı ve rozetleri burada. Yeni kaydolan da otomatik eklenir; herkesin bir köşesi var.</p></a>
+            <a class="card" href="/kulturel/psikoloji" data-route="/kulturel/psikoloji"><span class="card-icon" aria-hidden="true">❖</span><h3>Kültürel</h3><p>Psikoloji, hayvan bilim, kriminoloji, bilim, film, dizi ve daha fazlası. Komik ama bilgilendirici yazılar; kaynaklar yazının altında, çatlak yazarın aklında kalır.</p></a>
+            <a class="card" href="/gelistirmeler" data-route="/gelistirmeler"><span class="card-icon" aria-hidden="true">⚒</span><h3>Geliştirmeler</h3><p>Sitede ne eksik, ne yapılıyor, ne planlandı hepsi burada. Sen de öneri bırak; admin uygun gördüğünü plana çeker, notunu düşer.</p></a>
+            <a class="card" href="/kurbağa.html"><span class="card-icon" aria-hidden="true">❀</span><h3>Kurbağa felsefesi</h3><p>Ayrı bir sayfa, ayrı bir ruh. Kurbağanın nilüfer yaprağının altından bize kalanlar; acele etme, zaten o da bir yere gitmiyor.</p></a>
+            <a class="card" href="#random"><span class="card-icon" aria-hidden="true">⚄</span><h3>Bana bir şey söyle</h3><p>Rastgele bir cümle, bazen bir iki kelam, bazen tam bir muamma. İyi gelmeyebilir; zaten çoğu zaman gelmez. Yine de bir şans ver.</p></a>
+          </div>
+        </div>
+
+        <div class="section reveal" id="random">
+          <div class="section-head section-head--stack">
+            <div><h2>Bana bir şey söyle.</h2></div>
+            <p class="section-sub">Binlerce kombinasyon, hiçbiri garanti değil. Rastgele bir cümle, bazen bir iki kelam, bazen tam bir muamma. İyi gelmeyebilir; zaten çoğu zaman gelmez. Yine de bir şans ver, belki çatlak bu kez işe yarar bir şey söyler. Beğenmezsen “Neyim var?” butonu da bir seçenek.</p>
+          </div>
+          <div class="random-box">
+            <span class="random-quote" aria-hidden="true">“</span>
+            <p class="random-text" id="random-text">Evrenin sana söyleyecek bir şeyi var gibi. Muhtemelen yok. Yine de butona bas, belki bu kez çatlak işe yarar bir şey söyler.</p>
+            <div class="random-actions">
+              <button class="btn btn-primary" id="random-button" type="button">Bana bir şey söyle</button>
+              <button class="btn" id="test-open" type="button">Neyim var?</button>
+            </div>
+            <p class="random-note">İyi gelmedi mi? Yan taraftaki “Neyim var?” butonu da bir seçenek. İkisi de garanti değil, ama denemek bedava.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-placeholder" hidden>
+        <div class="placeholder">
+          <div>
+            <p class="kicker" id="placeholder-kicker">YAPIM AŞAMASINDA</p>
+            <h1 id="placeholder-title">Burası hâlâ kırık.</h1>
+            <p id="placeholder-text">Bu alan yapım aşamasında. Kafalar hâlâ kırık, ama çalışıyor.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-culture" hidden>
+        <div class="section-head">
+          <div><p class="kicker">KÜLTÜREL</p><h2>Bir şeyler biliyoruz.</h2></div>
+          <p class="section-sub">Komik ama bilgilendirici. Kaynaklar yazının altında.</p>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+        <div class="article-list" id="article-list"></div>
+      </section>
+
+      <section id="view-article" hidden>
+        <article class="article">
+          <p class="kicker" id="article-category">KÜLTÜREL</p>
+          <h1 id="article-title"></h1>
+          <p class="section-sub" id="article-summary"></p>
+          <div class="article-body" id="article-body"></div>
+          <p class="article-source" id="article-source"></p>
+          <div class="hero-actions">
+            <a class="btn" href="/kulturel" data-route="/kulturel">Kültüre dön</a>
+          </div>
+        </article>
+      </section>
+
+      <section id="view-no46" hidden>
+        <div class="section-head section-head--stack">
+          <div><h2>Açıklayan No46.</h2></div>
+          <p class="section-sub">Burası ekibin kendi kendini anlattığı yer. Kim neyle uğraşıyor, kafası neye kırık, neyi boş yapıyor — hepsi burada. Bir kategori seç, yazını bırak; başkalarının yazısına yorum yap. Kısacası: tanışma masası, ama masada herkes biraz tuhaf.</p>
+        </div>
+        <div id="no46-root"></div>
+      </section>
+
+      <section id="view-team" hidden>
+        <div class="section-head section-head--stack">
+          <div><h2>Kim bu ekip?</h2></div>
+          <p class="section-sub">Her üyenin kendine bakışı burada. Yeni kaydolan da otomatik eklenir. Kendi yazını güncelleyebilirsin; başkalarınınkine dokunma, onlar da çatlak.</p>
+        </div>
+        <div id="team-root"></div>
+      </section>
+
+      <section id="view-profil" hidden>
+        <div id="profil-root"></div>
+      </section>
+
+      <section id="view-rutbeler" hidden>
+        <div class="section-head section-head--stack">
+          <div><h2>Rütbe merdiveni ve sıralama.</h2></div>
+          <p class="section-sub">Kademeler, koltuklar ve puanlar. Kimse yukarı çıkmak zorunda değil, ama herkes bakar.</p>
+        </div>
+        <div id="rutbeler-root"></div>
+      </section>
+
+      <section id="view-ayarlar" hidden>
+        <div class="section-head section-head--stack">
+          <div><p class="kicker">AYARLAR</p><h2>Ayarlar.</h2></div>
+          <p class="section-sub">Görünüm, profil, güvenlik ve hesap. Ciddi yerler düz yazıldı, şaka yok.</p>
+        </div>
+        <div id="ayarlar-root"></div>
+      </section>
+
+      <section id="view-gelistirmeler" hidden>
+        <div class="section-head section-head--stack">
+          <div><h2>Geliştirmeler.</h2></div>
+          <p class="section-sub">Sitede ne eksik, ne yapılıyor, ne planlandı — hepsi burada. Sağ taraftan sen de öneri bırak; admin uygun gördüğünü plana çeker.</p>
+        </div>
+        <div id="gelistirmeler-root"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="/assets/img/no46-logo.svg?v=3" alt="No46">
+        <p class="footer-motto">Kafası kırık ama bir konuda iyi.<br><em>Boş yapmayı da bir uzmanlık olarak icra ederiz.</em></p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-head">Burası</span>
+          <a href="/no46" data-route="/no46">Açıklayan No46</a>
+          <a href="/ekip/kim-bu-ekip" data-route="/ekip/kim-bu-ekip">Kim bu ekip?</a>
+          <a href="/rutbeler" data-route="/rutbeler">Rütbeler</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-head">Yasal (kimse okumaz)</span>
+          <button type="button" class="footer-link" data-legal="kvkk">KVKK</button>
+          <button type="button" class="footer-link" data-legal="aydinlatma">Aydınlatma Metni</button>
+          <button type="button" class="footer-link" data-legal="cerez">Çerez Ayarları</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© NO.46 · Raporunuz onaylandı, kimse onaylamadı ama onaylandı.</span>
+      <span>İsimsiz kal, nazik ol.</span>
+    </div>
+  </footer>
+
+  <dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
+    <div class="legal-inner">
+      <button class="dialog-close" type="button" data-legal-close aria-label="Kapat">×</button>
+      <p class="kicker" id="legal-kicker">YASAL</p>
+      <h2 id="legal-title">—</h2>
+      <div class="legal-body" id="legal-body"></div>
+    </div>
+  </dialog>
+
+  <div class="test-overlay" id="test-overlay" hidden>
+    <div class="test-card" id="test-card"></div>
+  </div>
+
+  <dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title">
+    <div class="account-inner">
+      <button class="dialog-close" type="button" data-close-account aria-label="Kapat">×</button>
+      <p class="kicker">HESAP AYARLARI</p>
+      <h2 id="account-title">Profilin</h2>
+      <div class="account-head">
+        <span class="account-avatar" id="account-avatar" aria-hidden="true"></span>
+        <div>
+          <p class="account-name" id="account-name"></p>
+          <p class="account-username" id="account-username"></p>
+        </div>
+      </div>
+      <div class="account-grid">
+        <div><span>Puan</span><strong id="account-points"></strong></div>
+        <div><span>Rütbe</span><strong id="account-rank"></strong></div>
+        <div><span>Rozetler</span><strong id="account-badges"></strong></div>
+        <div><span>Görevler</span><strong id="account-tasks"></strong></div>
+      </div>
+      <button class="btn btn-dark btn-block" type="button" data-close-account>Anladım</button>
+    </div>
+  </dialog>
+
+  <script src="/assets/js/hero-canvas.js?v=6" defer></script>
+  <script src="/assets/js/ranks.js?v=1" defer></script>
+  <script src="/assets/js/auth.js?v=10" defer></script>
+  <script src="/assets/js/community.js?v=4" defer></script>
+  <script src="/assets/js/kart.js?v=1" defer></script>
+  <script src="/assets/js/profil.js?v=5" defer></script>
+  <script src="/assets/js/rutbeler-sayfa.js?v=1" defer></script>
+  <script src="/assets/js/ayarlar.js?v=2" defer></script>
+  <script src="/assets/js/gelistirmeler.js?v=4" defer></script>
+  <script src="/assets/js/footery.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=17" defer></script>
+</body>
+</html>

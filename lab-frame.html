@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>NO.46 — 3D Lab</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/img/no46-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; background: #0a0a0a; overflow: hidden; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; background: #0a0a0a; }
+    .back, .local {
+      position: fixed; z-index: 10; top: 18px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(10,10,10,.72); color: rgba(242,239,232,.86); backdrop-filter: blur(12px);
+      text-decoration: none; font: 600 12px/1 Helvetica, Arial, sans-serif; letter-spacing: .04em;
+      padding: 10px 15px; border-radius: 999px; transition: border-color .2s, color .2s, transform .2s;
+    }
+    .back { left: 18px; }
+    .local { right: 18px; color: rgba(242,239,232,.55); font-size: 10px; text-transform: uppercase; letter-spacing: .14em; }
+    .back:hover, .local:hover { border-color: #ff3b30; color: #fff; transform: translateY(-1px); }
+    @media (max-width: 560px) { .local { display: none; } .back { top: 12px; left: 12px; } }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← NO.46</a>
+  <a class="local" href="/lab/local">Yerel sürüm</a>
+  <iframe
+    src="https://cdn.21st.dev/larsen66/hero-futuristic/default/bundle.1747063193351.html"
+    title="NO.46 3D Lab"
+    allow="fullscreen; autoplay"
+    referrerpolicy="no-referrer"
+  ></iframe>
+</body>
+</html>

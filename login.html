@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
+<title>No46 Giriş</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0c; --card:rgba(20,20,21,.72); --card-line:rgba(255,255,255,.08);
+  --field:#1b1b1c; --field-line:rgba(255,255,255,.05); --fg:#f3f3f2; --muted:#8b8b8d; --faint:#5d5d60;
+  --btn:#ffffff; --btn-fg:#0b0b0c; --signal:#ff3b30; --amber:#f0a81c;
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+}
+[hidden]{display:none!important}
+.stage{position:fixed;inset:0;overflow:hidden;z-index:0;background:var(--bg)}
+.blob{position:absolute;border-radius:50%;filter:blur(38px);will-change:transform}
+.b1{width:62vmax;height:62vmax;left:-26vmax;top:-18vmax;background:radial-gradient(circle at 40% 40%,#4a4a4e 0,#303033 45%,#1a1a1b 75%,transparent 100%);animation:drift1 38s ease-in-out infinite alternate;opacity:.9}
+.b2{width:20vmax;height:20vmax;right:10%;top:12%;background:radial-gradient(circle,#38383b 0,#2a2a2c 55%,transparent 100%);filter:blur(14px);animation:drift2 30s ease-in-out infinite alternate;opacity:.8}
+.b3{width:44vmax;height:44vmax;right:-14vmax;bottom:-16vmax;background:radial-gradient(circle at 45% 45%,#404043 0,#2a2a2c 50%,#171718 80%,transparent 100%);animation:drift3 44s ease-in-out infinite alternate;opacity:.85}
+.b4{width:30vmax;height:30vmax;left:18%;bottom:-14vmax;background:radial-gradient(circle,#1f1f21 0,#161617 60%,transparent 100%);animation:drift2 50s ease-in-out infinite alternate-reverse;opacity:.9}
+@keyframes drift1{to{transform:translate(4vmax,5vmax) scale(1.05)}}
+@keyframes drift2{to{transform:translate(-3vmax,4vmax) scale(.94)}}
+@keyframes drift3{to{transform:translate(-5vmax,-3vmax) scale(1.06)}}
+.grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.45) 100%)}
+.wrap{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding-block:40px}
+.card{
+  width:420px;max-width:100%;flex:none;min-height:560px;border-radius:22px;
+  background:var(--card);border:1px solid var(--card-line);
+  -webkit-backdrop-filter:blur(26px) saturate(120%);backdrop-filter:blur(26px) saturate(120%);
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);
+  padding:36px 38px 30px;display:flex;flex-direction:column;align-items:center;
+}
+.mark{width:260px;height:auto;display:block}
+h1{font-family:var(--display);font-weight:400;font-size:31px;letter-spacing:.01em;margin:12px 0 0;line-height:1;text-align:center}
+.sub{margin:10px 0 0;font-size:10.5px;line-height:1.55;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;max-width:250px}
+.tabs{margin-top:26px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:999px;background:var(--field);border:1px solid var(--field-line)}
+.tab{appearance:none;border:0;background:transparent;color:var(--muted);font:500 12.5px var(--body);padding:9px 0;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.tab:hover{color:var(--fg)}
+.tab[aria-selected="true"]{background:#2a2a2c;color:var(--fg);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.panel{width:100%;flex:1;display:flex;flex-direction:column}
+.lead{margin:22px 0 0;text-align:center;font-size:12.5px;line-height:1.55;color:var(--muted)}
+form{display:flex;flex-direction:column;flex:1;margin:0}
+.fields{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.field{position:relative}
+.field input{
+  width:100%;height:48px;border-radius:999px;border:1px solid var(--field-line);background:var(--field);
+  color:var(--fg);font:400 13px var(--body);padding:0 20px;outline:none;transition:border-color .2s,background .2s;
+}
+.field input::placeholder{color:#6f6f72}
+.field input:focus{border-color:rgba(255,255,255,.28);background:#202021}
+.field.pw input{padding-right:64px}
+.reveal{position:absolute;right:8px;top:50%;transform:translateY(-50%);appearance:none;border:0;background:transparent;color:var(--muted);font:500 11.5px var(--body);padding:8px 12px;border-radius:999px;cursor:pointer}
+.reveal:hover{color:var(--fg)}
+.spacer{flex:1;min-height:24px}
+.cta{
+  width:100%;height:48px;border:0;border-radius:999px;background:var(--btn);color:var(--btn-fg);
+  font:600 13px var(--body);cursor:pointer;transition:transform .15s,background .2s;
+}
+.cta:hover{background:#e9e9e8}
+.cta:active{transform:scale(.985)}
+.cta:disabled{background:#242426;color:#6a6a6d;cursor:not-allowed}
+.alt{margin:16px 0 0;text-align:center;font-size:12px;color:var(--faint)}
+.alt button{appearance:none;border:0;background:none;padding:0;color:var(--muted);font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.alt button:hover{color:var(--fg)}
+.notice{margin-top:22px;width:100%;border-radius:6px 14px 14px 6px;background:#161617;border:1px solid var(--field-line);border-left:2px solid var(--amber);padding:15px 16px 14px;font-size:12.5px;line-height:1.6;color:#d6d6d4}
+.notice b{display:block;margin-top:12px;font:600 10px var(--body);letter-spacing:.16em;color:var(--amber);text-transform:uppercase}
+.status{min-height:16px;margin:12px 0 0;text-align:center;font-size:11.5px;color:var(--signal)}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:11px;color:var(--faint)}
+.links a{color:var(--muted);text-decoration:none;cursor:pointer}
+.links a:hover{color:var(--fg)}
+.links span.dot{opacity:.5}
+.legal-dialog{border:1px solid var(--card-line);border-radius:16px;background:#141415;color:var(--fg);width:min(540px,calc(100vw - 32px));max-height:84vh;overflow:auto;padding:0}
+.legal-dialog::backdrop{background:rgba(0,0,0,.6)}
+.legal-inner{padding:24px;position:relative}
+.legal-inner .dialog-close{position:absolute;top:12px;right:14px;background:none;border:0;color:var(--muted);font-size:1.4rem;cursor:pointer}
+.legal-inner h2{font-size:1.25rem;margin:6px 0 12px}
+.legal-body p{color:#b8b5ae;font-size:.86rem;line-height:1.7;margin:9px 0}
+.legal-body .page-meta{color:var(--muted);font-size:.74rem}
+.legal-body .switch-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #2a2a2a}
+.legal-body .switch{position:relative;width:46px;height:26px;flex:0 0 auto}
+.legal-body .switch input{display:none}
+.legal-body .switch .track{position:absolute;inset:0;border-radius:99px;background:#2a2a2a}
+.legal-body .switch .track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#b8b5ae}
+.legal-body .switch input:checked + .track{background:var(--amber)}
+.legal-body .switch input:checked + .track::after{transform:translateX(20px);background:#0b0b0c}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+</style>
+</head>
+<body>
+<div class="stage" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+  <div class="vignette"></div><div class="grain"></div>
+</div>
+
+<main class="wrap">
+  <section class="card">
+    <img class="mark" src="/assets/img/no46-logo.svg?v=3" alt="No46" width="260" height="302">
+    <p class="sub">Deli Raporu ve Meslek Edindirme Şube Müdürlüğü</p>
+
+    <div class="tabs" role="tablist" aria-label="Hesap">
+      <button class="tab" role="tab" id="t-giris" aria-selected="true" aria-controls="p-giris" type="button">Giriş yap</button>
+      <button class="tab" role="tab" id="t-kayit" aria-selected="false" aria-controls="p-kayit" type="button" tabindex="-1">Kayıt ol</button>
+    </div>
+
+    <div class="panel" id="p-giris" role="tabpanel" aria-labelledby="t-giris">
+      <p class="lead">Hoş geldin, seni bekliyorduk. İçeri geç.</p>
+      <form id="login-form" novalidate>
+        <div class="fields">
+          <div class="field"><label for="u" hidden>Kullanıcı adı</label><input id="u" name="username" type="text" autocomplete="username" placeholder="kafandaki ses değil, kullanıcı adın"></div>
+          <div class="field pw"><label for="pw" hidden>Şifre</label><input id="pw" name="password" type="password" autocomplete="current-password" placeholder="Şifre"><button class="reveal" id="reveal" type="button" aria-controls="pw" aria-pressed="false">göster</button></div>
+        </div>
+        <p class="status" id="form-error" role="status" aria-live="polite"></p>
+        <div class="spacer"></div>
+        <button class="cta" id="submit" type="submit">Giriş yap</button>
+        <p class="alt">Hesabın yok mu? <button type="button" data-go="kayit">Kayıt ol</button></p>
+      </form>
+    </div>
+
+    <div class="panel" id="p-kayit" role="tabpanel" aria-labelledby="t-kayit" hidden>
+      <div class="notice">
+        Kayıtlar şu an kapalı. Kapı açık görünüyor ama kilitli. Yeni kayıt tarihi belli değil; olursa ilk buradan duyururuz. O zamana kadar etraf biraz kalabalıklaşsın, biz de raporları hazır edelim.
+        <b>Evrak no: 46 / Onaylarız bakalım</b>
+      </div>
+      <div class="spacer"></div>
+      <button class="cta" type="button" disabled>Kayıtlar kapalı</button>
+      <p class="alt">Zaten hesabın var mı? <button type="button" data-go="giris">Giriş yap</button></p>
+    </div>
+  </section>
+
+  <nav class="links" aria-label="Alt bağlantılar">
+    <span>© NO.46</span><span class="dot">·</span>
+    <a href="#kvkk" data-legal="kvkk">KVKK</a><span class="dot">·</span>
+    <a href="#aydinlatma" data-legal="aydinlatma">Aydınlatma Metni</a><span class="dot">·</span>
+    <a href="#cerez" data-legal="cerez">Çerez Ayarları</a>
+  </nav>
+</main>
+
+<dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
+  <div class="legal-inner">
+    <button class="dialog-close" type="button" data-legal-close aria-label="Kapat">×</button>
+    <p class="kicker" id="legal-kicker">YASAL</p>
+    <h2 id="legal-title">—</h2>
+    <div class="legal-body" id="legal-body"></div>
+  </div>
+</dialog>
+
+<script src="/assets/js/login-ui.js?v=2" defer></script>
+<script src="/assets/js/auth-client.js?v=3" defer></script>
+<script src="/assets/js/footery.js?v=1" defer></script>
+</body>
+</html>

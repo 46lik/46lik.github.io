@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /no46
+Allow: /ekip
+Allow: /kulturel
+Allow: /gelistirmeler
+Allow: /kurba%C4%9Fa.html
+Disallow: /login
+Disallow: /register
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /assets/js/
+Disallow: /assets/css/
+Sitemap: http://127.0.0.1:4173/sitemap.xml
