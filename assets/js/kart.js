@@ -8,6 +8,10 @@
   var chip = null, panel = null, cache = null;
   var RING_R = 17, RING_C = 2 * Math.PI * 17;
 
+  var API_BASE = (window.KF_CONFIG && window.KF_CONFIG.cloud && window.KF_CONFIG.cloud.apiBase)
+    ? String(window.KF_CONFIG.cloud.apiBase).replace(/\/+$/, "")
+    : "";
+
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -16,7 +20,11 @@
   }
   function clear(n) { if (n) n.textContent = ""; }
   function api(url, opts) {
-    return fetch(url, opts || { credentials: "same-origin" }).then(function (r) {
+    if (url.indexOf("/api/") === 0 && API_BASE) {
+      var action = url.replace(/^\/api\//, "");
+      url = API_BASE + "?action=" + encodeURIComponent(action);
+    }
+    return fetch(url, opts || { credentials: "include" }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (d) {
         if (!r.ok || d.ok === false) throw new Error(d.error || ("Hata (" + r.status + ")"));
         return d;
@@ -162,8 +170,8 @@
     });
     var out = el("button", "danger", "Çıkış yap"); out.type = "button";
     out.addEventListener("click", function () {
-      api("/api/logout", { method: "POST", credentials: "same-origin", headers: { "x-csrf-token": csrf() } })
-        .catch(function () {}).then(function () { window.location.href = "/login"; });
+      api("/api/logout", { method: "POST", credentials: "include", headers: { "x-csrf-token": csrf() } })
+        .catch(function () {}).then(function () { window.location.href = "/"; });
     });
     qb.appendChild(out);
     q.appendChild(qb);

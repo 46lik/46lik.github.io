@@ -6,6 +6,10 @@
   var submit = document.getElementById("submit");
   if (!form) return;
 
+  var API_BASE = (window.KF_CONFIG && window.KF_CONFIG.cloud && window.KF_CONFIG.cloud.apiBase)
+    ? String(window.KF_CONFIG.cloud.apiBase).replace(/\/+$/, "")
+    : "";
+
   function setError(message) {
     if (!errorEl) return;
     errorEl.textContent = message || "";
@@ -28,10 +32,11 @@
       return m ? decodeURIComponent(m[1]) : "";
     }
     try {
-      const response = await fetch(isRegister ? "/api/register" : "/api/login", {
+      var url = API_BASE ? (API_BASE + "?action=" + (isRegister ? "register" : "login")) : (isRegister ? "/api/register" : "/api/login");
+      const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-csrf-token": csrf() },
-        credentials: "same-origin",
+        credentials: "include",
         body: JSON.stringify(data)
       });
       const result = await response.json().catch(function () { return {}; });

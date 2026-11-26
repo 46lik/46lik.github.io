@@ -10,6 +10,10 @@
     testAnswers: []
   };
 
+  var API_BASE = (window.KF_CONFIG && window.KF_CONFIG.cloud && window.KF_CONFIG.cloud.apiBase)
+    ? String(window.KF_CONFIG.cloud.apiBase).replace(/\/+$/, "")
+    : "";
+
   var CATEGORY_LABELS = {
     "psikoloji": "Psikoloji",
     "hayvan-bilim": "Hayvan bilim",
@@ -91,23 +95,12 @@
   }
   function bridgeFrogSession(user) {
     if (!user) return;
-    try {
-      var key = String(user.username || "").trim().toLowerCase();
-      if (!key) return;
-      window.localStorage.setItem("kf.users.v1", JSON.stringify([{
-        username: user.username,
-        usernameKey: key,
-        salt: "bridge",
-        hash: "bridge",
-        created_at: new Date().toISOString()
-      }]));
-      window.localStorage.setItem("kf.session.v1", key);
-    } catch (error) {}
+    // API tabanlı oturum; sahte localStorage yazısı yapma
   }
   function refreshUser() {
-    fetch("/api/me", { credentials: "same-origin" }).then(function (response) {
+    if (!API_BASE) return;
+    fetch(API_BASE + "?action=me", { credentials: "include" }).then(function (response) {
       if (!response.ok) {
-        window.location.href = "/login";
         return null;
       }
       return response.json();
@@ -119,7 +112,6 @@
           if (!window.__KF_KART_MOUNTED) { window.KF_KART.mount(); window.__KF_KART_MOUNTED = true; }
           else window.KF_KART.refresh();
         }
-        bridgeFrogSession(result.user);
         if (new URLSearchParams(location.search).get("to") === "kurbağa") {
           window.location.replace("/kurbağa.html?bridged=1");
         }
@@ -529,11 +521,10 @@
     if (logout) {
       logout.addEventListener("click", function () {
         try { window.localStorage.removeItem("kf.session.v1"); } catch (error) {}
-        fetch("/api/logout", { method: "POST", credentials: "same-origin" }).then(function () {
-          window.location.href = "/login";
-        }).catch(function () {
-          window.location.href = "/login";
-        });
+        if (API_BASE) {
+          fetch(API_BASE + "?action=logout", { method: "POST", credentials: "include" }).catch(function () {});
+        }
+        window.location.href = "/";
       });
     }
 
