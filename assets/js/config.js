@@ -17,8 +17,7 @@ window.KF_CONFIG = {
     provider: "custom",
 
     // cPanel hazır olunca:
-    // "https://api.perihanmustafayeva.com/api.php"
-    apiBase: "",
+    apiBase: "https://perihanmustafayeva.com/api.php",
 
     supabaseUrl: "",       // örn. "https://abcdefgh.supabase.co"
     supabaseAnonKey: "",   // Settings → API → anon public anahtarı
