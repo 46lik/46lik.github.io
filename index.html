@@ -52,30 +52,31 @@
 </head>
 <body>
   <!-- Giriş kapısı -->
-<div id="auth-gate" class="auth-gate">
-  <div class="auth-card">
-    <div class="auth-brand">
-      <img src="/assets/img/no46-logo.svg?v=3" alt="No46">
-      <p class="auth-kicker">GİRİŞ</p>
+  <div id="auth-gate" class="auth-gate">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <img src="/assets/img/no46-logo.svg?v=3" alt="No46">
+        <p class="auth-kicker">GİRİŞ</p>
+      </div>
+      <h1 id="auth-welcome">E-posta adresinizi ve şifrenizi girin.</h1>
+      <form id="auth-form" novalidate>
+        <div class="auth-field">
+          <label for="auth-username">E-posta</label>
+          <input id="auth-username" name="email" type="email" maxlength="190" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="auth-password">Şifre</label>
+          <input id="auth-password" name="password" type="password" maxlength="100" autocomplete="current-password" required>
+        </div>
+        <p class="auth-error" id="auth-error" role="alert"></p>
+        <button class="btn btn-primary btn-block" id="auth-submit" type="submit">
+          <span class="btn-label">Giriş yap</span>
+        </button>
+      </form>
+      <p class="auth-foot">Yalnızca yönetici girişi. Kayıt yok.</p>
     </div>
-    <h1 id="auth-welcome">E-posta adresinizi ve şifrenizi girin.</h1>
-    <form id="auth-form" novalidate>
-      <div class="auth-field">
-        <label for="auth-username">E-posta</label>
-        <input id="auth-username" name="email" type="email" maxlength="190" autocomplete="email" required>
-      </div>
-      <div class="auth-field">
-        <label for="auth-password">Şifre</label>
-        <input id="auth-password" name="password" type="password" maxlength="100" autocomplete="current-password" required>
-      </div>
-      <p class="auth-error" id="auth-error" role="alert"></p>
-      <button class="btn btn-primary btn-block" id="auth-submit" type="submit">
-        <span class="btn-label">Giriş yap</span>
-      </button>
-    </form>
-    <p class="auth-foot">Yalnızca yönetici girişi. Kayıt yok.</p>
   </div>
-</div>
+
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" data-route="/" aria-label="NO.46 ana sayfa">
