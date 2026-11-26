@@ -2,104 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://127.0.0.1:4173/</loc>
+    <loc>https://46lik.github.io/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="http://127.0.0.1:4173/"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://46lik.github.io/"/>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/no46</loc>
+    <loc>https://46lik.github.io/no46</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/ekip/kim-bu-ekip</loc>
+    <loc>https://46lik.github.io/ekip/kim-bu-ekip</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel</loc>
+    <loc>https://46lik.github.io/kulturel</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/psikoloji</loc>
+    <loc>https://46lik.github.io/kulturel/psikoloji</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/hayvan-bilim</loc>
+    <loc>https://46lik.github.io/kulturel/hayvan-bilim</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/kriminoloji</loc>
+    <loc>https://46lik.github.io/kulturel/kriminoloji</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/bilisim</loc>
+    <loc>https://46lik.github.io/kulturel/bilisim</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/film</loc>
+    <loc>https://46lik.github.io/kulturel/film</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/dizi</loc>
+    <loc>https://46lik.github.io/kulturel/dizi</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/fizik-tedavi</loc>
+    <loc>https://46lik.github.io/kulturel/fizik-tedavi</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/osb</loc>
+    <loc>https://46lik.github.io/kulturel/osb</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kulturel/gereksiz-bilgiler</loc>
+    <loc>https://46lik.github.io/kulturel/gereksiz-bilgiler</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/gelistirmeler</loc>
+    <loc>https://46lik.github.io/gelistirmeler</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/kurbağa.html</loc>
+    <loc>https://46lik.github.io/kurbağa.html</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/login</loc>
+    <loc>https://46lik.github.io/login</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/register</loc>
+    <loc>https://46lik.github.io/register</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

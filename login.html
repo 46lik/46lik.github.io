@@ -142,6 +142,21 @@ form{display:flex;flex-direction:column;flex:1;margin:0}
       <button class="cta" type="button" disabled>Kayıtlar kapalı</button>
       <p class="alt">Zaten hesabın var mı? <button type="button" data-go="giris">Giriş yap</button></p>
     </div>
+
+    <div class="panel" id="p-sifre" role="tabpanel" hidden>
+      <p class="lead">Şifren artık seninle konuşmuyor. Bunu düzelt, sonra içeri gir.</p>
+      <form id="sifre-form" novalidate>
+        <div class="fields">
+          <div class="field"><label for="eski" hidden>Eski şifre</label><input id="eski" name="eski" type="password" autocomplete="current-password" placeholder="Eski şifre"></div>
+          <div class="field pw"><label for="yeni" hidden>Yeni şifre</label><input id="yeni" name="yeni" type="password" autocomplete="new-password" placeholder="Yeni şifre (en az 6 karakter)"><button class="reveal" id="reveal-sifre" type="button" aria-controls="yeni" aria-pressed="false">göster</button></div>
+          <div class="field"><label for="tekrar" hidden>Yeni şifre tekrar</label><input id="tekrar" name="tekrar" type="password" autocomplete="new-password" placeholder="Yeni şifre tekrar"></div>
+        </div>
+        <p class="status" id="sifre-error" role="status" aria-live="polite"></p>
+        <div class="spacer"></div>
+        <button class="cta" id="sifre-submit" type="submit">Şifreyi değiştir</button>
+        <p class="alt">Şifreni kimse bilmiyordu sanırım. <button type="button" data-go="giris">Giriş yap</button></p>
+      </form>
+    </div>
   </section>
 
   <nav class="links" aria-label="Alt bağlantılar">
@@ -161,6 +176,7 @@ form{display:flex;flex-direction:column;flex:1;margin:0}
   </div>
 </dialog>
 
+<script src="/assets/js/no46-env.js?v=1"></script>
 <script src="/assets/js/login-ui.js?v=2" defer></script>
 <script src="/assets/js/auth-client.js?v=3" defer></script>
 <script src="/assets/js/footery.js?v=1" defer></script>

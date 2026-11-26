@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>NO.46 — Yönetim</title>
+  <meta name="description" content="NO.46 yönetim paneli. Kullanıcı, karakter fotoğrafı ve rozet yönetimi.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/img/no46-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/no46-favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/no46-favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/img/no46-favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/no46-apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="wrap admin-header-inner">
+      <a class="brand brand--logo" href="index.html">
+        <img src="assets/img/no46-logo.svg?v=2" alt="No46">
+      </a>
+      <button class="btn btn-ghost btn-sm" id="admin-logout" type="button" hidden>Çıkış</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-auth" id="admin-auth">
+      <div class="admin-card">
+        <img class="auth-logo admin-auth-logo" src="assets/img/no46-logo.svg" alt="No46">
+        <p class="admin-kicker">YÖNETİM</p>
+        <h1 id="admin-title">Admin girişi</h1>
+        <p class="admin-sub" id="admin-sub">Bu alan sadece yönetici içindir.</p>
+        <form id="admin-form" novalidate>
+          <div class="admin-field">
+            <label for="admin-username">Kullanıcı adı</label>
+            <input id="admin-username" name="username" type="text" maxlength="20" autocomplete="username" placeholder="admin" required>
+          </div>
+          <div class="admin-field">
+            <label for="admin-password">Şifre</label>
+            <input id="admin-password" name="password" type="password" maxlength="100" autocomplete="current-password" placeholder="Şifren" required>
+          </div>
+          <div class="admin-field" id="admin-confirm-field" hidden>
+            <label for="admin-confirm">Şifre tekrar</label>
+            <input id="admin-confirm" name="confirm" type="password" maxlength="100" autocomplete="new-password" placeholder="Şifreni tekrar yaz">
+          </div>
+          <p class="admin-error" id="admin-error" role="alert"></p>
+          <button class="btn btn-amber btn-block" id="admin-submit" type="submit">
+            <span class="btn-label">Giriş yap</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+        <p class="admin-foot">Yerel yönetim paneli. Üretimde sunucu tarafında korunmalıdır.</p>
+      </div>
+    </section>
+
+    <section class="admin-dashboard" id="admin-dashboard" hidden>
+      <div class="wrap">
+        <div class="admin-topline">
+          <div>
+            <p class="admin-kicker">KULLANICI YÖNETİMİ</p>
+            <h1 class="admin-title">Kullanıcılar</h1>
+            <p class="admin-sub">Kullanıcı ekle, çıkar, fotoğraf ve rozet ata.</p>
+          </div>
+          <div class="admin-stat">
+            <span id="admin-user-count">0</span>
+            <small>kullanıcı</small>
+          </div>
+        </div>
+
+        <section class="admin-panel admin-rank-panel">
+          <div class="admin-list-head">
+            <h2>Rütbe koltukları</h2>
+            <span class="admin-note">3 gün giriş yapmayan koltuğu düşer.</span>
+          </div>
+          <div class="rank-list admin-rank-list" id="admin-rank-list"></div>
+          <details class="rank-add">
+            <summary>Yeni rütbe koltuğu ekle</summary>
+            <form id="rank-add-form" novalidate>
+              <div class="admin-field">
+                <label for="rank-title">Rütbe adı</label>
+                <input id="rank-title" type="text" maxlength="60" placeholder="Örn. Bataklık Editörü">
+              </div>
+              <div class="admin-field">
+                <label for="rank-region">Açıklama / görev bölgesi</label>
+                <input id="rank-region" type="text" maxlength="120" placeholder="Örn. Sazlığın en sakin köşesi">
+              </div>
+              <div class="admin-field">
+                <label for="rank-points">Puan eşiği</label>
+                <input id="rank-points" type="number" min="0" max="100000" value="0">
+              </div>
+              <p class="admin-error" id="rank-add-error" role="alert"></p>
+              <button class="btn btn-amber btn-sm" type="submit">Rütbe ekle</button>
+            </form>
+          </details>
+        </section>
+
+        <div class="admin-grid">
+          <section class="admin-panel">
+            <h2>Yeni kullanıcı</h2>
+            <form id="admin-add-form" novalidate>
+              <div class="admin-field">
+                <label for="new-username">Kullanıcı adı</label>
+                <input id="new-username" type="text" maxlength="20" autocomplete="off" placeholder="yeni_kurbağa" required>
+              </div>
+              <div class="admin-field">
+                <label for="new-display">Görünen ad <span>isteğe bağlı</span></label>
+                <input id="new-display" type="text" maxlength="40" autocomplete="off" placeholder="Örn. Nilüfer">
+              </div>
+              <div class="admin-field">
+                <label for="new-password">Şifre</label>
+                <input id="new-password" type="password" maxlength="100" autocomplete="new-password" placeholder="En az 8 karakter" required>
+              </div>
+              <div class="admin-field">
+                <label for="new-photo">Karakter fotoğrafı <span>isteğe bağlı</span></label>
+                <input id="new-photo" type="file" accept="image/png,image/jpeg,image/webp">
+                <small class="admin-help">PNG, JPG veya WebP. En fazla 5 MB.</small>
+              </div>
+              <p class="admin-error" id="admin-add-error" role="alert"></p>
+              <button class="btn btn-amber btn-block" type="submit">Kullanıcı ekle</button>
+            </form>
+          </section>
+
+          <section class="admin-panel admin-panel--list">
+            <div class="admin-list-head">
+              <h2>Kullanıcılar</h2>
+              <input class="admin-search" id="admin-user-search" type="search" placeholder="Kullanıcı ara" aria-label="Kullanıcı ara">
+            </div>
+            <div class="admin-user-list" id="admin-user-list"></div>
+            <p class="admin-empty" id="admin-empty" hidden>Henüz kullanıcı yok.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span id="toast-text"></span>
+  </div>
+
+  <script src="assets/js/no46-env.js?v=1"></script>
+  <script src="assets/js/ranks.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

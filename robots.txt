@@ -11,4 +11,4 @@ Disallow: /admin.html
 Disallow: /api/
 Disallow: /assets/js/
 Disallow: /assets/css/
-Sitemap: http://127.0.0.1:4173/sitemap.xml
+Sitemap: https://46lik.github.io/sitemap.xml
